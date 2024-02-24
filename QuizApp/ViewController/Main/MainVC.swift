@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MainVC.swift
 //  QuizApp
 //
 //  Created by Marek Srutka on 21.02.2024.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MainViewController: UIViewController {
+class MainVC: UIViewController {
     
     let easyToUse = EasyToUse()
     
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
 
 // MARK: = Private extension
 
-private extension MainViewController {
+private extension MainVC {
     
     // MARK: - Setup UI
     

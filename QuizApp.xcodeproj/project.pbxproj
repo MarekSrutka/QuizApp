@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		785560122B864E3300987524 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560112B864E3300987524 /* LoginViewController.swift */; };
-		785560142B864F6B00987524 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560132B864F6B00987524 /* MainViewController.swift */; };
+		785083F82B8A3F680037288E /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083F72B8A3F680037288E /* GameVC.swift */; };
+		785083FA2B8A3F750037288E /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083F92B8A3F750037288E /* ResultVC.swift */; };
+		785083FE2B8A3F9B0037288E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083FD2B8A3F9B0037288E /* GameView.swift */; };
+		785084002B8A3FA80037288E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083FF2B8A3FA80037288E /* ResultView.swift */; };
+		785560122B864E3300987524 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560112B864E3300987524 /* LoginVC.swift */; };
+		785560142B864F6B00987524 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560132B864F6B00987524 /* MainVC.swift */; };
 		785560162B87A3F900987524 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560152B87A3F900987524 /* LoginView.swift */; };
 		7855601A2B87A8EF00987524 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560192B87A8EF00987524 /* Question.swift */; };
 		7855601C2B87AA0400987524 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855601B2B87AA0400987524 /* QuestionViewModel.swift */; };
@@ -20,7 +24,7 @@
 		785560352B88DFEC00987524 /* EasyToUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560342B88DFEC00987524 /* EasyToUse.swift */; };
 		785560382B88E19500987524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560372B88E19500987524 /* HeaderView.swift */; };
 		7855603A2B8907CF00987524 /* MyCustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560392B8907CF00987524 /* MyCustomTabBarController.swift */; };
-		78E0B0932B890EA400BC8C4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0922B890EA400BC8C4D /* SettingsViewController.swift */; };
+		78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0922B890EA400BC8C4D /* SettingsVC.swift */; };
 		78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */; };
 		78E0B0982B89270400BC8C4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0972B89270400BC8C4D /* SettingsView.swift */; };
 		78E0B0A02B8A076300BC8C4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B09F2B8A076300BC8C4D /* UIButton+Extension.swift */; };
@@ -53,8 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		785560112B864E3300987524 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		785560132B864F6B00987524 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		785083F72B8A3F680037288E /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		785083F92B8A3F750037288E /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		785083FD2B8A3F9B0037288E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		785083FF2B8A3FA80037288E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		785560112B864E3300987524 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		785560132B864F6B00987524 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		785560152B87A3F900987524 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		785560192B87A8EF00987524 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		7855601B2B87AA0400987524 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
@@ -66,7 +74,7 @@
 		785560342B88DFEC00987524 /* EasyToUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyToUse.swift; sourceTree = "<group>"; };
 		785560372B88E19500987524 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		785560392B8907CF00987524 /* MyCustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTabBarController.swift; sourceTree = "<group>"; };
-		78E0B0922B890EA400BC8C4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		78E0B0922B890EA400BC8C4D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		78E0B0972B89270400BC8C4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		78E0B09F2B8A076300BC8C4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -110,6 +118,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		785083F52B8A3F530037288E /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				785083F72B8A3F680037288E /* GameVC.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		785083F62B8A3F5A0037288E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				785083F92B8A3F750037288E /* ResultVC.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		785083FB2B8A3F7C0037288E /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				785083FD2B8A3F9B0037288E /* GameView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		785083FC2B8A3F870037288E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				785083FF2B8A3FA80037288E /* ResultView.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		7855600F2B86469F00987524 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +170,8 @@
 		785560172B87A40600987524 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				785083FC2B8A3F870037288E /* Result */,
+				785083FB2B8A3F7C0037288E /* Game */,
 				78E0B0962B8926F200BC8C4D /* Settings */,
 				7855602F2B88D6D800987524 /* Main */,
 				785560182B87A40D00987524 /* Login */,
@@ -156,6 +198,8 @@
 		7855601E2B87AA3900987524 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				785083F62B8A3F5A0037288E /* Result */,
+				785083F52B8A3F530037288E /* Game */,
 				78E0B0912B890E9200BC8C4D /* Settings */,
 				785560202B87AA4A00987524 /* Main */,
 				7855601F2B87AA4300987524 /* Login */,
@@ -167,7 +211,7 @@
 		7855601F2B87AA4300987524 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				785560112B864E3300987524 /* LoginViewController.swift */,
+				785560112B864E3300987524 /* LoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -175,7 +219,7 @@
 		785560202B87AA4A00987524 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				785560132B864F6B00987524 /* MainViewController.swift */,
+				785560132B864F6B00987524 /* MainVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -220,7 +264,7 @@
 		78E0B0912B890E9200BC8C4D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				78E0B0922B890EA400BC8C4D /* SettingsViewController.swift */,
+				78E0B0922B890EA400BC8C4D /* SettingsVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -436,7 +480,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785560122B864E3300987524 /* LoginViewController.swift in Sources */,
+				785083F82B8A3F680037288E /* GameVC.swift in Sources */,
+				785560122B864E3300987524 /* LoginVC.swift in Sources */,
+				785083FA2B8A3F750037288E /* ResultVC.swift in Sources */,
 				78E0B0A22B8A09E600BC8C4D /* ButtonSetup.swift in Sources */,
 				785560312B88D6EC00987524 /* MainView.swift in Sources */,
 				785560352B88DFEC00987524 /* EasyToUse.swift in Sources */,
@@ -446,16 +492,18 @@
 				78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */,
 				7855602E2B88CD7800987524 /* LoginScreens.swift in Sources */,
 				7855601C2B87AA0400987524 /* QuestionViewModel.swift in Sources */,
+				785084002B8A3FA80037288E /* ResultView.swift in Sources */,
 				7855603A2B8907CF00987524 /* MyCustomTabBarController.swift in Sources */,
-				78E0B0932B890EA400BC8C4D /* SettingsViewController.swift in Sources */,
+				78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */,
 				78F7E8E72B8637EB00CFF03D /* AppDelegate.swift in Sources */,
 				785560292B88936500987524 /* UIImage+Extension.swift in Sources */,
 				78F7E8E92B8637EB00CFF03D /* SceneDelegate.swift in Sources */,
 				7855601A2B87A8EF00987524 /* Question.swift in Sources */,
 				785560252B888D9600987524 /* UITextField+Extension.swift in Sources */,
 				785560162B87A3F900987524 /* LoginView.swift in Sources */,
-				785560142B864F6B00987524 /* MainViewController.swift in Sources */,
+				785560142B864F6B00987524 /* MainVC.swift in Sources */,
 				78E0B0A52B8A15A100BC8C4D /* RouterVC.swift in Sources */,
+				785083FE2B8A3F9B0037288E /* GameView.swift in Sources */,
 				785560382B88E19500987524 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

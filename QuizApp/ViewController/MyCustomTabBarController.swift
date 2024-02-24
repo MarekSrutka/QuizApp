@@ -101,8 +101,8 @@ private extension MyCustomTabBarController {
 // MARK: - Functions
     
     func addTabItems() {
-        let vc1 = MainViewController()
-        let vc2 = SettingsViewController()
+        let vc1 = MainVC()
+        let vc2 = SettingsVC()
         
         vc1.title = "Home"
         vc2.title = "Setings"

@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  SettingsVC.swift
 //  QuizApp
 //
 //  Created by Marek Srutka on 23.02.2024.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsVC: UIViewController {
     
-    let easyToUse = EasyToUse()
+   private let easyToUse = EasyToUse()
     
     
 // MARK: - Properties
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
 
 // MARK: - Private extension
 
-extension SettingsViewController {
+extension SettingsVC {
     
 // MARK: - SetupUI
     

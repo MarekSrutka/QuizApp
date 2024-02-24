@@ -47,7 +47,7 @@ private extension RouterVC {
     }
     
     func displayLogin() {
-        let vc = LoginViewController()
+        let vc = LoginVC()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }

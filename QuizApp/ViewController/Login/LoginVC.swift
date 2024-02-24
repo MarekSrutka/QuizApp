@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginVC.swift
 //  QuizApp
 //
 //  Created by Marek Srutka on 21.02.2024.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
     
     private let easyToUse = EasyToUse()
    
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
 
 // MARK: - Private extension
 
-private extension LoginViewController {
+private extension LoginVC {
     
     // MARK: - Setup UI
     
