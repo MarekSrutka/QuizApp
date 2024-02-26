@@ -56,15 +56,16 @@ private extension MyCustomTabBarController {
         shape.strokeColor = UIColor.white.cgColor
         shape.fillColor = UIColor.white.cgColor
         
-        //tabbar
+        // tabbar
         self.tabBar.layer.insertSublayer(shape, at: 0)
         self.tabBar.itemWidth = 40
         self.tabBar.itemPositioning = .centered
         self.tabBar.itemSpacing = 180
         self.tabBar.tintColor = UIColor(hex: "#23d602", alpha: 1.0)
         
-        //button
+        // button
         playQuizBtn.frame = CGRect(x: (self.tabBar.bounds.width)/2 - 30, y: -20, width: 60, height: 60)
+        playQuizBtn.addTarget(self, action: #selector(didTapPlay), for: .touchUpInside)
     }
     
     func getPathForTabBar() -> UIBezierPath {
@@ -107,14 +108,17 @@ private extension MyCustomTabBarController {
         vc1.title = "Home"
         vc2.title = "Setings"
         
-//        vc1.isNavigationBarHidden = true
-//        vc2.isNavigationBarHidden = true
-        
         setViewControllers([vc1, vc2], animated: false)
         guard let items = tabBar.items else {
             return
         }
         items[0].image = UIImage(systemName: "house.fill")
         items[1].image = UIImage(systemName: "gearshape.fill")
+    }
+    
+    @objc func didTapPlay() {
+        let vc = GameVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }

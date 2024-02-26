@@ -64,10 +64,6 @@ class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    deinit {
-        
-    }
 }
 
 
@@ -110,9 +106,9 @@ private extension LoginView {
         login_nicknameField.returnKeyType = .done
         login_nicknameField.clearButtonMode = .whileEditing
         login_nicknameField.borderStyle = .roundedRect
+        login_nicknameField.imageSetup(imageName: "ic_field_nickname")
         login_nicknameField.translatesAutoresizingMaskIntoConstraints = false
         login_nicknameField.addConstraint(login_nicknameField.heightAnchor.constraint(equalToConstant: 50))
-        login_nicknameField.imageSetup(imageName: "ic_field_nickname")
         
         // UIButton
         login_btn.configuration = .primary(with: .init(title: "login", iconName: "ic_login"))
@@ -121,14 +117,17 @@ private extension LoginView {
     
     func validateNicknameField() {
         if login_nicknameField.text == "" {
-            login_errorLbl.isHidden = false
-            login_errorLbl.text = "Please enter your nickname"
-            login_errorLbl.textColor = .systemRed
             loginStatus = .failed
         } else {
             login_errorLbl.isHidden = true
             loginStatus = .success
         }
+    }
+    
+    func showError() {
+        login_errorLbl.isHidden = false
+        login_errorLbl.text = "Please enter your nickname"
+        login_errorLbl.textColor = .systemRed
     }
     
     
@@ -141,7 +140,7 @@ private extension LoginView {
         case .success:
             return action(login_nicknameField.text ?? "")
         case .failed:
-            return print("Failed Login")
+            return showError()
         case .none:
             break
         }

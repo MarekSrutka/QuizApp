@@ -12,10 +12,13 @@ struct Question: Codable {
 }
 
 struct QuestionResponse: Codable {
-    let title: String
-    let question1: String
-    let question2: String
-    let question3: String
-    let question4: String
+    let questionName: String
+    let answers: [Answers]
     let correctAnswer: [String]
+    let numberOfCorrectAnswers: Int
+    let type: QuestionType
+}
+
+struct Answers: Codable {
+    let answerText: String
 }

@@ -27,4 +27,18 @@ extension UIButton.Configuration {
         return config
     }
     
+    static func quiz(with model: ButtonSetup) -> Self {
+        var config = UIButton.Configuration.filled()
+        var container = AttributeContainer()
+        
+        container.font = UIFont.boldSystemFont(ofSize: 20)
+        config.attributedTitle = AttributedString(model.title.uppercased(), attributes: container)
+        config.baseBackgroundColor = UIColor(hex: model.backgroundColorHex ?? "#000000", alpha: 1.0)
+        config.baseForegroundColor = UIColor(hex: model.titleColorHex ?? "#ffffff", alpha: 1.0)
+        config.buttonSize = .large
+        config.cornerStyle = .medium
+        
+        return config
+    }
+    
 }

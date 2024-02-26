@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsView: UIView {
     
-    // MARK: - Properties
+// MARK: - Properties
     
     let headerVw: HeaderView = {
         

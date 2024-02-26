@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		785083F82B8A3F680037288E /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083F72B8A3F680037288E /* GameVC.swift */; };
-		785083FA2B8A3F750037288E /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083F92B8A3F750037288E /* ResultVC.swift */; };
 		785083FE2B8A3F9B0037288E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083FD2B8A3F9B0037288E /* GameView.swift */; };
-		785084002B8A3FA80037288E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785083FF2B8A3FA80037288E /* ResultView.swift */; };
 		785560122B864E3300987524 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560112B864E3300987524 /* LoginVC.swift */; };
 		785560142B864F6B00987524 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560132B864F6B00987524 /* MainVC.swift */; };
 		785560162B87A3F900987524 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560152B87A3F900987524 /* LoginView.swift */; };
@@ -24,6 +22,9 @@
 		785560352B88DFEC00987524 /* EasyToUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560342B88DFEC00987524 /* EasyToUse.swift */; };
 		785560382B88E19500987524 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560372B88E19500987524 /* HeaderView.swift */; };
 		7855603A2B8907CF00987524 /* MyCustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785560392B8907CF00987524 /* MyCustomTabBarController.swift */; };
+		786832F52B8C831700BB8E8B /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F42B8C831700BB8E8B /* QuestionType.swift */; };
+		786832FA2B8CAB3B00BB8E8B /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F92B8CAB3B00BB8E8B /* QuestionService.swift */; };
+		786832FC2B8D034900BB8E8B /* AnswerCorrect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832FB2B8D034900BB8E8B /* AnswerCorrect.swift */; };
 		78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0922B890EA400BC8C4D /* SettingsVC.swift */; };
 		78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */; };
 		78E0B0982B89270400BC8C4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0972B89270400BC8C4D /* SettingsView.swift */; };
@@ -58,9 +59,7 @@
 
 /* Begin PBXFileReference section */
 		785083F72B8A3F680037288E /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
-		785083F92B8A3F750037288E /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		785083FD2B8A3F9B0037288E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		785083FF2B8A3FA80037288E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		785560112B864E3300987524 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		785560132B864F6B00987524 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		785560152B87A3F900987524 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -74,6 +73,9 @@
 		785560342B88DFEC00987524 /* EasyToUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyToUse.swift; sourceTree = "<group>"; };
 		785560372B88E19500987524 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		785560392B8907CF00987524 /* MyCustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTabBarController.swift; sourceTree = "<group>"; };
+		786832F42B8C831700BB8E8B /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		786832F92B8CAB3B00BB8E8B /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		786832FB2B8D034900BB8E8B /* AnswerCorrect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCorrect.swift; sourceTree = "<group>"; };
 		78E0B0922B890EA400BC8C4D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		78E0B0972B89270400BC8C4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -126,28 +128,12 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		785083F62B8A3F5A0037288E /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				785083F92B8A3F750037288E /* ResultVC.swift */,
-			);
-			path = Result;
-			sourceTree = "<group>";
-		};
 		785083FB2B8A3F7C0037288E /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				785083FD2B8A3F9B0037288E /* GameView.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		785083FC2B8A3F870037288E /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				785083FF2B8A3FA80037288E /* ResultView.swift */,
-			);
-			path = Result;
 			sourceTree = "<group>";
 		};
 		7855600F2B86469F00987524 /* Assets */ = {
@@ -170,7 +156,6 @@
 		785560172B87A40600987524 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				785083FC2B8A3F870037288E /* Result */,
 				785083FB2B8A3F7C0037288E /* Game */,
 				78E0B0962B8926F200BC8C4D /* Settings */,
 				7855602F2B88D6D800987524 /* Main */,
@@ -198,7 +183,6 @@
 		7855601E2B87AA3900987524 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				785083F62B8A3F5A0037288E /* Result */,
 				785083F52B8A3F530037288E /* Game */,
 				78E0B0912B890E9200BC8C4D /* Settings */,
 				785560202B87AA4A00987524 /* Main */,
@@ -240,6 +224,8 @@
 			children = (
 				7855602B2B88CD2300987524 /* LoginStatus.swift */,
 				7855602D2B88CD7800987524 /* LoginScreens.swift */,
+				786832F42B8C831700BB8E8B /* QuestionType.swift */,
+				786832FB2B8D034900BB8E8B /* AnswerCorrect.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -259,6 +245,14 @@
 				785560372B88E19500987524 /* HeaderView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		786832F82B8CAB2500BB8E8B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				786832F92B8CAB3B00BB8E8B /* QuestionService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		78E0B0912B890E9200BC8C4D /* Settings */ = {
@@ -312,6 +306,7 @@
 				7855601E2B87AA3900987524 /* ViewController */,
 				785560172B87A40600987524 /* View */,
 				785560102B86474C00987524 /* Model */,
+				786832F82B8CAB2500BB8E8B /* Service */,
 				7855601D2B87AA0B00987524 /* ViewModel */,
 				7855602A2B88CD0900987524 /* Enum */,
 				785560232B888D7600987524 /* Extensions */,
@@ -482,7 +477,6 @@
 			files = (
 				785083F82B8A3F680037288E /* GameVC.swift in Sources */,
 				785560122B864E3300987524 /* LoginVC.swift in Sources */,
-				785083FA2B8A3F750037288E /* ResultVC.swift in Sources */,
 				78E0B0A22B8A09E600BC8C4D /* ButtonSetup.swift in Sources */,
 				785560312B88D6EC00987524 /* MainView.swift in Sources */,
 				785560352B88DFEC00987524 /* EasyToUse.swift in Sources */,
@@ -492,12 +486,14 @@
 				78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */,
 				7855602E2B88CD7800987524 /* LoginScreens.swift in Sources */,
 				7855601C2B87AA0400987524 /* QuestionViewModel.swift in Sources */,
-				785084002B8A3FA80037288E /* ResultView.swift in Sources */,
+				786832F52B8C831700BB8E8B /* QuestionType.swift in Sources */,
 				7855603A2B8907CF00987524 /* MyCustomTabBarController.swift in Sources */,
 				78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */,
 				78F7E8E72B8637EB00CFF03D /* AppDelegate.swift in Sources */,
+				786832FA2B8CAB3B00BB8E8B /* QuestionService.swift in Sources */,
 				785560292B88936500987524 /* UIImage+Extension.swift in Sources */,
 				78F7E8E92B8637EB00CFF03D /* SceneDelegate.swift in Sources */,
+				786832FC2B8D034900BB8E8B /* AnswerCorrect.swift in Sources */,
 				7855601A2B87A8EF00987524 /* Question.swift in Sources */,
 				785560252B888D9600987524 /* UITextField+Extension.swift in Sources */,
 				785560162B87A3F900987524 /* LoginView.swift in Sources */,
@@ -688,6 +684,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -722,6 +719,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

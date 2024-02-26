@@ -38,7 +38,20 @@ extension SettingsVC {
     
     func setupUI() {
         
-        easyToUse.setGradientBackground(self.view)
+        easyToUse.setGradientBackground(self.view,
+                                        colorTop: .init(
+                                            red: 255.0,
+                                            green: 149.0,
+                                            blue: 0.0,
+                                            alpha: 1.0
+                                        ),
+                                        colorBottom: .init(
+                                            red: 255.0,
+                                            green: 94.0,
+                                            blue: 58.0,
+                                            alpha: 1.0
+                                        )
+        )
         self.view.addSubview(settingsVw)
         
         NSLayoutConstraint.activate([
@@ -53,6 +66,7 @@ extension SettingsVC {
 // MARK: - Functions
     
     func clickLogout() {
+        easyToUse.defaults.setValue(nil, forKey: "username")
         easyToUse.defaults.removeObject(forKey: "username")
         dismiss(animated: false)
     }
