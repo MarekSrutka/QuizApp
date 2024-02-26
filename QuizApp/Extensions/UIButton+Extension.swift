@@ -17,7 +17,7 @@ extension UIButton.Configuration {
         container.font = UIFont.boldSystemFont(ofSize: 20)
         
         config.attributedTitle = AttributedString(model.title.uppercased(), attributes: container)
-        config.baseBackgroundColor = UIColor(hex: model.backgroundColorHex ?? "#000000", alpha: 0.0)
+        config.baseBackgroundColor = UIColor(hex: model.backgroundColorHex ?? "#000000", alpha: 1.0)
         config.baseForegroundColor = UIColor(hex: model.titleColorHex ?? "#ffffff", alpha: 1.0)
         config.image = originImage?.scale(newWidth: 20)
         config.imagePadding = 8
