@@ -9,65 +9,50 @@ import UIKit
 
 class SettingsVC: UIViewController {
     
-   private let easyToUse = EasyToUse()
-    
-    
 // MARK: - Properties
     
-    private lazy var settingsVw: SettingsView = {
-        let vw = SettingsView { [weak self] in
-            self?.clickLogout()
-        }
-        vw.translatesAutoresizingMaskIntoConstraints = false
-        return vw
-    }()
+    let settingsView = SettingsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
     }
-}
-
-
-// MARK: - Private extension
-
-extension SettingsVC {
     
-// MARK: - SetupUI
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
     
     func setupUI() {
-        
-        easyToUse.setGradientBackground(self.view,
-                                        colorTop: .init(
-                                            red: 255.0,
-                                            green: 149.0,
-                                            blue: 0.0,
-                                            alpha: 1.0
-                                        ),
-                                        colorBottom: .init(
-                                            red: 255.0,
-                                            green: 94.0,
-                                            blue: 58.0,
-                                            alpha: 1.0
-                                        )
-        )
-        self.view.addSubview(settingsVw)
+        configureViewController()
+        configureSettingsView()
+    }
+    
+    func configureViewController() {
+        EasyToUse.setGradientBackground(view, colorTop: ColorGradient.topColor, colorBottom: ColorGradient.bottomColor)
+    }
+    
+    func configureSettingsView() {
+        view.addSubview(settingsView)
+        settingsView.delegate = self
         
         NSLayoutConstraint.activate([
-            settingsVw.topAnchor.constraint(equalTo: self.view.topAnchor),
-            settingsVw.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            settingsVw.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            settingsVw.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            settingsView.topAnchor.constraint(equalTo: view.topAnchor),
+            settingsView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            settingsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            settingsView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
-    
-// MARK: - Functions
-    
     func clickLogout() {
-        easyToUse.defaults.setValue(nil, forKey: "username")
-        easyToUse.defaults.removeObject(forKey: "username")
+        PersistanceManager.deleteUser()
         dismiss(animated: false)
+    }
+    
+}
+
+extension SettingsVC: SettingsViewDelegate {
+    func didTapLogout() {
+        clickLogout()
     }
 }

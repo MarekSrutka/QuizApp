@@ -9,46 +9,25 @@ import UIKit
 
 class MyCustomTabBarController: UITabBarController {
     
-// MARK: - Properties
+    // MARK: - Properties
     
-    let playQuizBtn: UIButton = {
-       
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold, scale: .large)
-        
-        btn.backgroundColor = UIColor(hex: "#23d602", alpha: 1.0)
-        btn.layer.cornerRadius = 30
-        btn.layer.shadowColor = UIColor.black.cgColor
-        btn.layer.shadowOpacity = 0.2
-        btn.layer.shadowOffset = CGSize(width: 4, height: 4)
-        btn.setImage(UIImage(systemName: "flag.checkered", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
-        
-        return btn
-    }()
-
+    let playQuizBtn = QAPlayButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTabItems()
-    }
-    
-    override func loadView() {
-        super.loadView()
-        self.tabBar.addSubview(playQuizBtn)
+        viewControllers = [createMainNC(), createSettingsNC()]
         setupUI()
     }
-
-}
-
-
-// MARK: - Private extension
-
-private extension MyCustomTabBarController {
     
-// MARK: - Setup
+    // MARK: - Functions
     
     func setupUI() {
-        
-        // shape
+        layouUI()
+        configureTabbar()
+        configurePlayButton()
+    }
+    
+    func layouUI() {
         let path: UIBezierPath = getPathForTabBar()
         let shape = CAShapeLayer()
         shape.path = path.cgPath
@@ -56,18 +35,53 @@ private extension MyCustomTabBarController {
         shape.strokeColor = UIColor.white.cgColor
         shape.fillColor = UIColor.white.cgColor
         
-        // tabbar
-        self.tabBar.layer.insertSublayer(shape, at: 0)
-        self.tabBar.itemWidth = 40
-        self.tabBar.itemPositioning = .centered
-        self.tabBar.itemSpacing = 180
-        self.tabBar.tintColor = UIColor(hex: "#23d602", alpha: 1.0)
+        tabBar.layer.insertSublayer(shape, at: 0)
+    }
+    
+    func createMainNC() -> UINavigationController {
+        let mainVC = MainVC()
+        mainVC.tabBarItem.image = UIImage(systemName: "house.fill")
         
-        // button
+        return UINavigationController(rootViewController: mainVC)
+    }
+    
+    func createSettingsNC() -> UINavigationController {
+        let mainVC = SettingsVC()
+        mainVC.tabBarItem.image = UIImage(systemName: "gearshape.fill")
+        
+        return UINavigationController(rootViewController: mainVC)
+    }
+    
+    func configureTabbar() {
+        tabBar.addSubview(playQuizBtn)
+        tabBar.itemWidth = 40
+        tabBar.itemPositioning = .centered
+        tabBar.itemSpacing = 180
+        tabBar.tintColor = UIColor(hex: "#23d602", alpha: 1.0)
+    }
+    
+    func configurePlayButton() {
+        playQuizBtn.set(icon: UIImage(systemName: "flag.checkered")!)
         playQuizBtn.frame = CGRect(x: (self.tabBar.bounds.width)/2 - 30, y: -20, width: 60, height: 60)
         playQuizBtn.addTarget(self, action: #selector(didTapPlay), for: .touchUpInside)
     }
     
+    func pushGameVC() {
+        if let selectedNavController = selectedViewController as? UINavigationController {
+            let newViewController = GameVC()
+            selectedNavController.pushViewController(newViewController, animated: true)
+        }
+    }
+    
+    @objc func didTapPlay() {
+        pushGameVC()
+    }
+}
+
+
+// MARK: - Private extension
+
+private extension MyCustomTabBarController {
     func getPathForTabBar() -> UIBezierPath {
         let frameWidth = self.tabBar.bounds.width
         let frameHeight = view.bounds.height
@@ -96,29 +110,5 @@ private extension MyCustomTabBarController {
         
         path.close()
         return path
-    }
-    
-    
-// MARK: - Functions
-    
-    func addTabItems() {
-        let vc1 = MainVC()
-        let vc2 = SettingsVC()
-        
-        vc1.title = "Home"
-        vc2.title = "Setings"
-        
-        setViewControllers([vc1, vc2], animated: false)
-        guard let items = tabBar.items else {
-            return
-        }
-        items[0].image = UIImage(systemName: "house.fill")
-        items[1].image = UIImage(systemName: "gearshape.fill")
-    }
-    
-    @objc func didTapPlay() {
-        let vc = GameVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
     }
 }

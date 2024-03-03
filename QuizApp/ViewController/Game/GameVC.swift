@@ -36,7 +36,12 @@ class GameVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -106,7 +111,8 @@ private extension GameVC {
         if viewModel.questionIndex < viewModel.questions.count {
             updateUI()
         } else {
-            dismiss(animated: true)
+            tabBarController?.tabBar.isHidden = false
+            navigationController?.popViewController(animated: true)
         }
     }
     

@@ -2,7 +2,7 @@
 //  ButtonSetup.swift
 //  QuizApp
 //
-//  Created by Marek Srutka on 24.02.2024.
+//  Created by Marek Srutka on 02.03.2024.
 //
 
 import Foundation

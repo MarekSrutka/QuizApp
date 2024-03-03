@@ -7,75 +7,60 @@
 
 import UIKit
 
+protocol SettingsViewDelegate: AnyObject {
+    func didTapLogout()
+}
+
 class SettingsView: UIView {
     
-// MARK: - Properties
+    // MARK: - Properties
     
-    let headerVw: HeaderView = {
-        
-        let vw = HeaderView("Welcome to settings ⚙️")
-        
-        vw.translatesAutoresizingMaskIntoConstraints = false
-        
-        return vw
-    }()
+    let headerView = HeaderView("Welcome to settings ⚙️")
+    var logoutButton = QAButton(title: "Logout", color: .black)
     
-    private lazy var setting_logoutBtn = UIButton()
-    
-    private var action: () -> ()
+    weak var delegate: SettingsViewDelegate?
     
     
-// MARK: - Init
+    // MARK: - Init
     
-    init(action: @escaping () -> ()) {
-        self.action = action
+    init() {
         super.init(frame: .zero)
-        
         setupUI()
-        configuration()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-
-// MARK: = Private extension
-
-private extension SettingsView {
+    private func setupUI() {
+        configureHeaderView()
+        configureLogoutButton()
+    }
     
-// MARK: - SetupUI
-    
-    func setupUI() {
-        
-        self.addSubview(headerVw)
-        self.addSubview(setting_logoutBtn)
+    private func configureHeaderView() {
+        self.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headerVw.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            headerVw.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            headerVw.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            
-            setting_logoutBtn.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            setting_logoutBtn.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            setting_logoutBtn.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            headerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
     
-    func configuration() {
+    private func configureLogoutButton() {
+        self.addSubview(logoutButton)
+        logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
         
-        // UIButton
-        setting_logoutBtn.configuration = .primary(with: .init(title: "logout", iconName: "ic_logout"))
-        setting_logoutBtn.translatesAutoresizingMaskIntoConstraints = false
-        setting_logoutBtn.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            logoutButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            logoutButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            logoutButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+        ])
     }
     
-    
-    // MARK: - Objective C
-        
     @objc func didTapLogout() {
-        action()
+        delegate?.didTapLogout()
     }
 }

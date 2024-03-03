@@ -7,59 +7,36 @@
 
 import UIKit
 
-class RouterVC: UIViewController {
-    
-    private let easyToUse = EasyToUse()
-    private var loginScreen: LoginScreens = .login
+enum AppScreen {
+    case login
+    case main
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class RouterVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkIfuserLogin()
+        checkIfUserIsLoggedIn()
     }
-}
-
-
-// MARK: - Private extension {
-
-private extension RouterVC {
     
-// MARK: - Functions
-    
-    func checkIfuserLogin() {
-        if easyToUse.defaults.string(forKey: "username")?.isEmpty != nil {
-            handleScreen(with: .main)
+    private func checkIfUserIsLoggedIn() {
+        if PersistanceManager.doesUserExist() {
+            navigate(to: .main)
         } else {
-            handleScreen(with: .login)
+            navigate(to: .login)
         }
     }
     
-    
-// MARK: - Navigation
-    
-    func handleScreen(with screens: LoginScreens) {
-        switch screens {
+    func navigate(to screen: AppScreen) {
+        let viewController: UIViewController
+        
+        switch screen {
         case .login:
-            return displayLogin()
+            viewController = LoginVC()
         case .main:
-            return displayMain()
+            viewController = MyCustomTabBarController()
         }
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: false)
     }
-    
-    func displayLogin() {
-        let vc = LoginVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false)
-    }
-    
-    func displayMain() {
-        let vc = MyCustomTabBarController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false)
-    }
-    
 }
-
