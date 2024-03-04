@@ -19,8 +19,8 @@ class GameView: UIView {
     
     // MARK: - Properties
     
-    let questionTitle = QALabel(textAlignment: .center, fontSize: 24, weight: .bold)
-    let questionNumberOfCorrenctAnswers = QALabel(textAlignment: .center, fontSize: 12, weight: .medium)
+    var questionTitle = QALabel(textAlignment: .center, fontSize: 24, weight: .bold)
+    var questionNumberOfCorrenctAnswers = QALabel(textAlignment: .center, fontSize: 12, weight: .medium)
     let progressView = UIProgressView()
     let stackView = UIStackView()
     var answerButtons = QAButton()
@@ -59,8 +59,8 @@ class GameView: UIView {
     
     private func updateUI() {
         configureProgressView()
-        configureQuestionTitle()
-        configureQuestionNumber()
+        questionTitle.text = "\(viewModel.questions[viewModel.questionIndex].questionName)"
+        questionNumberOfCorrenctAnswers.text = "CorrenctAnswers: \(viewModel.questions[viewModel.questionIndex].correctAnswer.count)"
         groupButtons.removeAll()
         configureAnswerButton()
     }

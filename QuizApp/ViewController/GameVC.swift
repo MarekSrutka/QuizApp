@@ -11,8 +11,6 @@ class GameVC: UIViewController {
     
     private let mockServices = QuestionMock()
     var gameView: GameView!
-    
-    var countTapNext: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +26,6 @@ class GameVC: UIViewController {
     func setupUI() {
         configureControllerView()
         configureGameView()
-        updateViewModel()
     }
     
     func configureControllerView() {
