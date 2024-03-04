@@ -13,8 +13,8 @@ class HeaderView: UIView {
     
     // MARK: - Properties
     
-    let welcobeLabel = QALabel(textAlignment: .left, fontSize: 24)
-    let usernameLabel = QALabel(textAlignment: .left, fontSize: 16)
+    let welcobeLabel = QALabel(textAlignment: .left, fontSize: 24, weight: .bold)
+    let usernameLabel = QALabel(textAlignment: .left, fontSize: 16, weight: .semibold)
     
     // MARK: - Init
     

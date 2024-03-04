@@ -147,22 +147,6 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		785083F52B8A3F530037288E /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				785083F72B8A3F680037288E /* GameVC.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		785083FB2B8A3F7C0037288E /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				785083FD2B8A3F9B0037288E /* GameView.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
 		7855600F2B86469F00987524 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,10 +168,11 @@
 		785560172B87A40600987524 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				785E19DE2B95E2D20027DD86 /* Login */,
-				785083FB2B8A3F7C0037288E /* Game */,
-				78E0B0962B8926F200BC8C4D /* Settings */,
-				7855602F2B88D6D800987524 /* Main */,
+				785E19DF2B95E2E10027DD86 /* LoginView.swift */,
+				785083FD2B8A3F9B0037288E /* GameView.swift */,
+				78E0B0972B89270400BC8C4D /* SettingsView.swift */,
+				785560372B88E19500987524 /* HeaderView.swift */,
+				785560302B88D6EC00987524 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,29 +188,13 @@
 		7855601E2B87AA3900987524 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				785083F52B8A3F530037288E /* Game */,
-				78E0B0912B890E9200BC8C4D /* Settings */,
-				785560202B87AA4A00987524 /* Main */,
-				7855601F2B87AA4300987524 /* Login */,
+				785083F72B8A3F680037288E /* GameVC.swift */,
+				78E0B0922B890EA400BC8C4D /* SettingsVC.swift */,
+				785560112B864E3300987524 /* LoginVC.swift */,
+				785560132B864F6B00987524 /* MainVC.swift */,
 				785560392B8907CF00987524 /* MyCustomTabBarController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		7855601F2B87AA4300987524 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				785560112B864E3300987524 /* LoginVC.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		785560202B87AA4A00987524 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				785560132B864F6B00987524 /* MainVC.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		785560232B888D7600987524 /* Extensions */ = {
@@ -247,37 +216,13 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		7855602F2B88D6D800987524 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				785560362B88E18700987524 /* Header */,
-				785560302B88D6EC00987524 /* MainView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		785560362B88E18700987524 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				785560372B88E19500987524 /* HeaderView.swift */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		785E19D52B947B890027DD86 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				785E19D62B947B9A0027DD86 /* Constant.swift */,
+				785560342B88DFEC00987524 /* EasyToUse.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		785E19DE2B95E2D20027DD86 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				785E19DF2B95E2E10027DD86 /* LoginView.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		786832F82B8CAB2500BB8E8B /* Service */ = {
@@ -286,22 +231,6 @@
 				786832F92B8CAB3B00BB8E8B /* QuestionService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		78E0B0912B890E9200BC8C4D /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				78E0B0922B890EA400BC8C4D /* SettingsVC.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		78E0B0962B8926F200BC8C4D /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				78E0B0972B89270400BC8C4D /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		78E0B0A32B8A158C00BC8C4D /* Router */ = {
@@ -372,7 +301,6 @@
 		78F7E9162B863EAF00CFF03D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				785560342B88DFEC00987524 /* EasyToUse.swift */,
 				78F7E8E82B8637EB00CFF03D /* SceneDelegate.swift */,
 				78F7E8E62B8637EB00CFF03D /* AppDelegate.swift */,
 				78F7E8F12B8637EC00CFF03D /* LaunchScreen.storyboard */,

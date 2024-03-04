@@ -6,12 +6,12 @@
 //
 
 import Foundation
+import Combine
 
-class QuestionViewModel {
+class QuestionViewModel: ObservableObject {
     var questions: [QuestionResponse] = []
     var error: Error? = nil
-    
-    var questionIndex: Int = 0
+    @Published var questionIndex: Int = 0
     var answerChoosen: [String] = []
     var score: Int = 0
     var count: Int = 0
@@ -20,6 +20,7 @@ class QuestionViewModel {
     
     init(service: QuestionServicing) {
         self.service = service
+        fetchData()
     }
     
     func fetchData() {

@@ -16,8 +16,8 @@ class LoginView: UIView {
     let stackView = UIStackView()
     let loginButton = QAButton(title: "Login", color: .black)
     let usernameTextField = QATextField()
-    let nicknameTitleLabel = QALabel(textAlignment: .center, fontSize: 24)
-    let errorLabel = QALabel(textAlignment: .center, fontSize: 18)
+    let nicknameTitleLabel = QALabel(textAlignment: .center, fontSize: 24, weight: .bold)
+    let errorLabel = QALabel(textAlignment: .center, fontSize: 18, weight: .medium)
     
     weak var delegate: LoginViewDelegate?
 
