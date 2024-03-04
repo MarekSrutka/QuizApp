@@ -10,17 +10,13 @@ import UIKit
 
 class LoginVC: UIViewController {
    
-    let contentView = UIView()
-    let stackView = UIStackView()
-    let loginButton = QAButton(title: "Login", color: .black)
-    let usernameTextField = QATextField()
-    let nicknameTitleLabel = QALabel(textAlignment: .center, fontSize: 24)
-    let errorLabel = QALabel(textAlignment: .center, fontSize: 18)
+    let loginView = LoginView()
     
-    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
+    var isUsernameEntered: Bool { return !loginView.usernameTextField.text!.isEmpty }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegates()
         setupUI()
         createDismissKeyboardTapGesture()
     }
@@ -31,16 +27,16 @@ class LoginVC: UIViewController {
     
     func setupUI() {
         configureViewController()
-        configureContentView()
-        configureStackView()
-        configureNicknameLabel()
-        configureTextField()
-        configureErrorLabel()
-        configureLoginButton()
+        configureLoginView()
     }
     
     func configureViewController() {
         EasyToUse.setGradientBackground(view, colorTop: ColorGradient.topColor, colorBottom: ColorGradient.bottomColor)
+    }
+    
+    func delegates() {
+        loginView.delegate = self
+        loginView.usernameTextField.delegate = self
     }
     
     func createDismissKeyboardTapGesture() {
@@ -48,67 +44,26 @@ class LoginVC: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func configureContentView() {
-        view.addSubview(contentView)
-        contentView.addSubview(stackView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+    func configureLoginView() {
+        view.addSubview(loginView)
+        loginView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        loginView.layer.cornerRadius = 10
         
         NSLayoutConstraint.activate([
-            contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ])
     }
     
-    func configureStackView() {
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 15
-        stackView.layer.cornerRadius = 10
-        
-        stackView.addArrangedSubview(nicknameTitleLabel)
-        stackView.addArrangedSubview(usernameTextField)
-        stackView.addArrangedSubview(errorLabel)
-        stackView.addArrangedSubview(loginButton)
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-        ])
-    }
-    
-    func configureNicknameLabel() {
-        nicknameTitleLabel.text = "Nickname"
-    }
-    
-    func configureTextField() {
-        usernameTextField.delegate = self
-        usernameTextField.resignFirstResponder()
-        usernameTextField.addConstraint(usernameTextField.heightAnchor.constraint(equalToConstant: 50))
-    }
-    
-    func configureErrorLabel() {
-        errorLabel.isHidden = true
-        errorLabel.text = "Please enter nickname"
-        errorLabel.textColor = .systemRed
-    }
-    
-    func configureLoginButton() {
-        loginButton.addTarget(self, action: #selector(pushMainVC), for: .touchUpInside)
-    }
-    
-    @objc func pushMainVC() {
-        errorLabel.isHidden = true
-        guard isUsernameEntered else  {
-            errorLabel.isHidden = false
+    func tapLoginButton() {
+        loginView.errorLabel.isHidden = true
+        guard isUsernameEntered else {
+            loginView.errorLabel.isHidden = false
             return
         }
         
-        let user: User = User(username: usernameTextField.text ?? "")
+        let user: User = User(username: loginView.usernameTextField.text ?? "")
         
         PersistanceManager.saveUser(user)
         
@@ -118,11 +73,15 @@ class LoginVC: UIViewController {
     }
 }
 
-// MARK: - UITextField Delegate
+extension LoginVC: LoginViewDelegate {
+    func didTapLogin() {
+        tapLoginButton()
+    }
+}
 
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pushMainVC()
+        tapLoginButton()
         return true
     }
 }
