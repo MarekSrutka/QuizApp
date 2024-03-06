@@ -16,7 +16,7 @@ class LoginView: UIView {
     // MARK: - Properties
     
     let stackView = UIStackView()
-    let loginButton = QAButton(title: "Login", color: .black)
+    let loginButton = QAButton(title: "LOGIN".localized, color: .black)
     let usernameTextField = QATextField()
     let nicknameTitleLabel = QALabel(textAlignment: .center, fontSize: 24, weight: .bold)
     let errorLabel = QALabel(textAlignment: .center, fontSize: 18, weight: .medium)
@@ -66,7 +66,7 @@ class LoginView: UIView {
     }
     
     private func configureNicknameLabel() {
-        nicknameTitleLabel.text = "Nickname"
+        nicknameTitleLabel.text = "NICKNAME".localized
     }
     
     private func configureTextField() {
@@ -77,7 +77,7 @@ class LoginView: UIView {
     
     private func configureErrorLabel() {
         errorLabel.isHidden = true
-        errorLabel.text = "Please enter a nickname"
+        errorLabel.text = "ERROR_ENTER_NAME".localized
         errorLabel.textColor = .systemRed
     }
     

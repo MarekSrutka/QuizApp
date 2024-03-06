@@ -44,6 +44,7 @@ class MyCustomTabBarController: UITabBarController {
     
     func createMainNC() -> UINavigationController {
         let mainVC = MainVC()
+        mainVC.tabBarItem.title = "TABBAR_MAIN".localized
         mainVC.tabBarItem.image = UIImage(systemName: "house.fill")
         
         return UINavigationController(rootViewController: mainVC)
@@ -51,6 +52,7 @@ class MyCustomTabBarController: UITabBarController {
     
     func createSettingsNC() -> UINavigationController {
         let mainVC = SettingsVC()
+        mainVC.tabBarItem.title = "TABBAR_SETTINGS".localized
         mainVC.tabBarItem.image = UIImage(systemName: "gearshape.fill")
         
         return UINavigationController(rootViewController: mainVC)

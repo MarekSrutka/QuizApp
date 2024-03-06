@@ -15,8 +15,8 @@ class SettingsView: UIView {
     
     // MARK: - Properties
     
-    let headerView = HeaderView("Welcome to settings ⚙️")
-    var logoutButton = QAButton(title: "Logout", color: .black)
+    let headerView = HeaderView("SETTINGS_HEADER_TITLE".localized)
+    var logoutButton = QAButton(title: "LOGOUT".localized, color: .black)
     
     weak var delegate: SettingsViewDelegate?
     

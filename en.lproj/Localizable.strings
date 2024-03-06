@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  QuizApp
+
+  Created by Marek Srutka on 06.03.2024.
+  
+*/
+
+"PLACEHOLDER_ENTER_NAME" = "Enter a username";
+
+// MARK: Login
+"LOGIN" = "Login";
+"NICKNAME" = "Nickname";
+"ERROR_ENTER_NAME" = "Please enter a nickname";
+
+// MARK: Main
+"MAIN_HEADER_TITLE" = "Welcome home 👋";
+
+// MARK: Settings
+"SETTINGS_HEADER_TITLE" = "Welcome to settings ⚙️";
+"LOGOUT" = "Logout";
+
+// MARK: TabBar
+"TABBAR_MAIN" = "Home";
+"TABBAR_SETTINGS" = "Settings";
+
+// MARK: Game
+"GAME_CORRECT_ANS" = "Correct Answers:";
+

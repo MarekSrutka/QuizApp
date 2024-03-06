@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  QuizApp
+
+  Created by Marek Srutka on 06.03.2024.
+  
+*/
+
+"PLACEHOLDER_ENTER_NAME" = "Zadej prezdívku";
+
+// MARK: Login
+"LOGIN" = "Prohlásit se";
+"NICKNAME" = "Prezdívka";
+"ERROR_ENTER_NAME" = "Prosím zadej prezdívku";
+
+// MARK: Main
+"MAIN_HEADER_TITLE" = "Vítej doma 👋";
+
+// MARK: Settings
+"SETTINGS_HEADER_TITLE" = "Vítej v nastaveni ⚙️";
+"LOGOUT" = "Odhlásit se";
+
+// MARK: TabBar
+"TABBAR_MAIN" = "Domů";
+"TABBAR_SETTINGS" = "Nastaveni";
+
+// MARK: Game
+"GAME_CORRECT_ANS" = "Správné odpovědi:";

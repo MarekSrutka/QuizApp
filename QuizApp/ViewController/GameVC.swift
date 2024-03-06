@@ -75,7 +75,7 @@ class GameVC: UIViewController {
     }
     
     func updateQustionNumberOfCorrectAnswers() {
-        gameView.questionNumberOfCorrectAnswers.text = "Correct Answers: \(viewModel.questions[viewModel.questionIndex].correctAnswer.count)"
+        gameView.questionNumberOfCorrectAnswers.text = "\("GAME_CORRECT_ANS".localized) \(viewModel.questions[viewModel.questionIndex].correctAnswer.count)"
     }
     
     func updateAnswerButton() {

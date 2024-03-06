@@ -11,7 +11,7 @@ class MainView: UIView {
     
     // MARK: - Properties
     
-    let headerView = HeaderView("Welcome home 👋")
+    let headerView = HeaderView("MAIN_HEADER_TITLE".localized)
     
     
     // MARK: - Init

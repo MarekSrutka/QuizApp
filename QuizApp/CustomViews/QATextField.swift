@@ -47,7 +47,7 @@ class QATextField: UITextField {
         autocorrectionType = .no
         returnKeyType = .go
         clearButtonMode = .whileEditing
-        placeholder = "Enter a username"
+        placeholder = "PLACEHOLDER_ENTER_NAME".localized
     }
     
     private func imageSetup(imageName: String) {
