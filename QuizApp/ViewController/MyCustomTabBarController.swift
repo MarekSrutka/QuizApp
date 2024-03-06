@@ -74,7 +74,7 @@ class MyCustomTabBarController: UITabBarController {
     
     // MARK: - Navigation
     
-    func pushGameVC() {
+    func displayGameVC() {
         if let selectedNavController = selectedViewController as? UINavigationController {
             let newViewController = GameVC()
             selectedNavController.pushViewController(newViewController, animated: true)
@@ -84,7 +84,7 @@ class MyCustomTabBarController: UITabBarController {
     // MARK: - Action
     
     @objc func didTapPlay() {
-        pushGameVC()
+        displayGameVC()
     }
 }
 

@@ -14,7 +14,6 @@ class QuestionViewModel: ObservableObject {
     @Published var questionIndex: Int = 0
     var answerChoosen: [String] = []
     var score: Int = 0
-    var count: Int = 0
     
     private let service: QuestionServicing
     
@@ -34,10 +33,25 @@ class QuestionViewModel: ObservableObject {
         }
     }
     
+    func addToAnswerChoosen(_ selectedAnswer: String) {
+        answerChoosen.append(selectedAnswer)
+    }
+    
+    func deleteFromAnswerChoosen(_ selectedAnswer: String) {
+        if let indexToRemove = answerChoosen.firstIndex(of: selectedAnswer) {
+            answerChoosen.remove(at: indexToRemove)
+        }
+    }
+    
     func prepareNextQuestion() {
         answerChoosen.removeAll()
         questionIndex += 1
-        score += 1
-        count = 0
+    }
+    
+    func increaseScoreOrNot() {
+        let areAnswersCorrect = Set(answerChoosen).isSuperset(of: questions[questionIndex].correctAnswer)
+        if areAnswersCorrect {
+            score += 1
+        }
     }
 }

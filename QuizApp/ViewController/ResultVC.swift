@@ -10,6 +10,7 @@ import UIKit
 class ResultVC: UIViewController {
     
     var score: Int!
+    var reachScore: Int!
     
     var resultView = ResultView()
 
@@ -30,11 +31,11 @@ class ResultVC: UIViewController {
     func configureResultView() {
         view.addSubview(resultView)
         
-        guard score != nil else {
+        guard score != nil, reachScore != nil else {
             return
         }
         
-        resultView.scoreLabel.text = String("\(score!)/10")
+        resultView.scoreLabel.text = String("\(score!)/\(reachScore!)")
         
         NSLayoutConstraint.activate([
             resultView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

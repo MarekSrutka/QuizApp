@@ -4,7 +4,7 @@ import UIKit
 
 // Delegate for communication between GameView and GameVC
 protocol GameViewDelegate: AnyObject {
-    func didTapAnswer()
+    func didTapAnswer(at index: Int)
 }
 
 // MARK: - GameView
@@ -20,7 +20,6 @@ class GameView: UIView {
     let stackView = UIStackView()
     var answerButtons = QAButton()
     var groupButtons: [QAButton] = []
-    let nextButton = QAButton()
     
     weak var delegate: GameViewDelegate?
     
@@ -44,7 +43,6 @@ class GameView: UIView {
         configureQuestionNumber()
         configureAnswerButton()
         configureStackView()
-        //configureNextButton() // It seems it's not needed for now, commented out.
     }
     
     private func configureProgressView() {
@@ -117,8 +115,8 @@ class GameView: UIView {
     
     // MARK: - Actions
     
-    @objc func didTapAnswer() {
-        clearStackView()
-        delegate?.didTapAnswer()
+    @objc func didTapAnswer(sender: QAButton) {
+        guard let index = groupButtons.firstIndex(of: sender) else { return }
+        delegate?.didTapAnswer(at: index)
     }
 }
