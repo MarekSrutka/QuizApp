@@ -13,6 +13,8 @@ protocol LoginViewDelegate: AnyObject {
 
 class LoginView: UIView {
     
+    // MARK: - Properties
+    
     let stackView = UIStackView()
     let loginButton = QAButton(title: "Login", color: .black)
     let usernameTextField = QATextField()
@@ -21,6 +23,8 @@ class LoginView: UIView {
     
     weak var delegate: LoginViewDelegate?
 
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -30,6 +34,8 @@ class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Configuration
     
     private func setupUI() {
         configureStackView()
@@ -71,7 +77,7 @@ class LoginView: UIView {
     
     private func configureErrorLabel() {
         errorLabel.isHidden = true
-        errorLabel.text = "Please enter nickname"
+        errorLabel.text = "Please enter a nickname"
         errorLabel.textColor = .systemRed
     }
     
@@ -79,8 +85,9 @@ class LoginView: UIView {
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
     }
     
+    // MARK: - Action
+    
     @objc func didTapLogin() {
         delegate?.didTapLogin()
     }
-    
 }

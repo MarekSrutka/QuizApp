@@ -33,4 +33,11 @@ class QuestionViewModel: ObservableObject {
             }
         }
     }
+    
+    func prepareNextQuestion() {
+        answerChoosen.removeAll()
+        questionIndex += 1
+        score += 1
+        count = 0
+    }
 }

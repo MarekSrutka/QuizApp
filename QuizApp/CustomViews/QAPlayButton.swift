@@ -9,6 +9,8 @@ import UIKit
 
 class QAPlayButton: UIButton {
 
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -23,6 +25,7 @@ class QAPlayButton: UIButton {
         set(icon: icon)
     }
     
+    // MARK: - Configuration
     
     private func configure() {
         backgroundColor = UIColor(hex: "#23d602", alpha: 1.0)

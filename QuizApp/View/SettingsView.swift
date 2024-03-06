@@ -21,10 +21,10 @@ class SettingsView: UIView {
     weak var delegate: SettingsViewDelegate?
     
     
-    // MARK: - Init
+    // MARK: - Initialization
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -32,6 +32,8 @@ class SettingsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Configuration
     
     private func setupUI() {
         configureHeaderView()
@@ -59,6 +61,8 @@ class SettingsView: UIView {
             logoutButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
+    
+    // MARK: - Action
     
     @objc func didTapLogout() {
         delegate?.didTapLogout()

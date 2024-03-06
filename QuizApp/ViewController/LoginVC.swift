@@ -7,23 +7,28 @@
 
 import UIKit
 
-
 class LoginVC: UIViewController {
    
+    // MARK: - Properties
+    
     let loginView = LoginView()
     
     var isUsernameEntered: Bool { return !loginView.usernameTextField.text!.isEmpty }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegates()
         setupUI()
+        delegates()
         createDismissKeyboardTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    // MARK: - UI Setup
     
     func setupUI() {
         configureViewController()
@@ -56,6 +61,8 @@ class LoginVC: UIViewController {
         ])
     }
     
+    // MARK: - Login Button Handling
+    
     func tapLoginButton() {
         loginView.errorLabel.isHidden = true
         guard isUsernameEntered else {
@@ -73,11 +80,15 @@ class LoginVC: UIViewController {
     }
 }
 
+// MARK: - LoginViewDelegate
+
 extension LoginVC: LoginViewDelegate {
     func didTapLogin() {
         tapLoginButton()
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

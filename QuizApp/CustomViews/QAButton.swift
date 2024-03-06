@@ -8,7 +8,9 @@
 import UIKit
 
 class QAButton: UIButton {
-
+    
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -23,11 +25,15 @@ class QAButton: UIButton {
         set(title: title, color: color, tag: tag)
     }
     
+    // MARK: - Configuration
+    
     private func configure() {
         configuration = .filled()
         configuration?.cornerStyle = .medium
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    // MARK: - Set Button Title and Style
     
     final func set(title: String, color: UIColor, tag: Int = 1) {
         configuration?.baseBackgroundColor = color
@@ -39,10 +45,12 @@ class QAButton: UIButton {
 }
 
 extension QAButton {
+    
+    // MARK: - Create Button for Array
+    
     func setForArray(title: String, color: UIColor, tag: Int) -> QAButton {
         let button = QAButton()
         button.set(title: title, color: color, tag: tag)
         return button
     }
 }
-

@@ -26,6 +26,8 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI Configuration
+    
     private func setupUI() {
         configureHeaderView()
     }

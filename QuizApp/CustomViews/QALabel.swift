@@ -25,10 +25,9 @@ class QALabel: UILabel {
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
         self.textColor = textColor ?? .black
-        
     }
     
-    func set(title: String,
+    func set(title: String? = nil,
              textAlignment: NSTextAlignment,
              fontSize: CGFloat = 18,
              weight: UIFont.Weight = .regular,

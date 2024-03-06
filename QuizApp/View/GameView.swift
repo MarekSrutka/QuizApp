@@ -1,26 +1,21 @@
-//
-//  GameView.swift
-//  QuizApp
-//
-//  Created by Marek Srutka on 24.02.2024.
-//
-
 import UIKit
-import Combine
 
+// MARK: - GameViewDelegate
+
+// Delegate for communication between GameView and GameVC
 protocol GameViewDelegate: AnyObject {
     func didTapAnswer()
 }
 
+// MARK: - GameView
+
+// Class representing the game view
 class GameView: UIView {
-    
-    var viewModel: QuestionViewModel
-    private var cancellables: Set<AnyCancellable> = []
-    
+
     // MARK: - Properties
     
     var questionTitle = QALabel(textAlignment: .center, fontSize: 24, weight: .bold)
-    var questionNumberOfCorrenctAnswers = QALabel(textAlignment: .center, fontSize: 12, weight: .medium)
+    var questionNumberOfCorrectAnswers = QALabel(textAlignment: .center, fontSize: 12, weight: .medium)
     let progressView = UIProgressView()
     let stackView = UIStackView()
     var answerButtons = QAButton()
@@ -29,9 +24,10 @@ class GameView: UIView {
     
     weak var delegate: GameViewDelegate?
     
-    init(mockService: QuestionMock) {
-        self.viewModel = QuestionViewModel(service: mockService)
-        super.init(frame: .zero)
+    // MARK: - Initialization
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -40,13 +36,7 @@ class GameView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupCombine() {
-        viewModel.$questionIndex
-            .sink { [weak self] _ in
-                self?.updateUI()
-            }
-            .store(in: &cancellables)
-    }
+    // MARK: - UI Configuration
     
     private func setupUI() {
         configureProgressView()
@@ -54,23 +44,12 @@ class GameView: UIView {
         configureQuestionNumber()
         configureAnswerButton()
         configureStackView()
-//        configureNextButton()
-    }
-    
-    private func updateUI() {
-        configureProgressView()
-        questionTitle.text = "\(viewModel.questions[viewModel.questionIndex].questionName)"
-        questionNumberOfCorrenctAnswers.text = "CorrenctAnswers: \(viewModel.questions[viewModel.questionIndex].correctAnswer.count)"
-        groupButtons.removeAll()
-        configureAnswerButton()
+        //configureNextButton() // It seems it's not needed for now, commented out.
     }
     
     private func configureProgressView() {
         addSubview(progressView)
         progressView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let totalProgress = Float(viewModel.questionIndex) / Float(viewModel.questions.count)
-        progressView.setProgress(totalProgress, animated: true)
         
         NSLayoutConstraint.activate([
             progressView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -81,9 +60,7 @@ class GameView: UIView {
     
     private func configureQuestionTitle() {
         addSubview(questionTitle)
-        
-        let questionName = viewModel.questions[viewModel.questionIndex]
-        questionTitle.set(title: questionName.questionName, textAlignment: .center, fontSize: 24, weight: .bold, numberOfLines: 0)
+        questionTitle.set(textAlignment: .center, fontSize: 24, weight: .bold, numberOfLines: 0)
         
         NSLayoutConstraint.activate([
             questionTitle.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 10),
@@ -94,20 +71,17 @@ class GameView: UIView {
     }
     
     private func configureQuestionNumber() {
-        addSubview(questionNumberOfCorrenctAnswers)
+        addSubview(questionNumberOfCorrectAnswers)
         
-        let questionNumber = viewModel.questions[viewModel.questionIndex].correctAnswer.count
-        
-        questionNumberOfCorrenctAnswers.set(title: "CorrenctAnswers: \(questionNumber)",
-                                            textAlignment: .center,
-                                            fontSize: 14,
-                                            weight: .bold)
+        questionNumberOfCorrectAnswers.set(textAlignment: .center,
+                                           fontSize: 14,
+                                           weight: .bold)
         
         NSLayoutConstraint.activate([
-            questionNumberOfCorrenctAnswers.topAnchor.constraint(equalTo: questionTitle.bottomAnchor, constant: 10),
-            questionNumberOfCorrenctAnswers.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            questionNumberOfCorrenctAnswers.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            questionNumberOfCorrenctAnswers.heightAnchor.constraint(equalToConstant: 50),
+            questionNumberOfCorrectAnswers.topAnchor.constraint(equalTo: questionTitle.bottomAnchor, constant: 10),
+            questionNumberOfCorrectAnswers.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            questionNumberOfCorrectAnswers.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            questionNumberOfCorrectAnswers.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -118,7 +92,7 @@ class GameView: UIView {
         stackView.spacing = 12
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: questionNumberOfCorrenctAnswers.bottomAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: questionNumberOfCorrectAnswers.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
@@ -128,16 +102,10 @@ class GameView: UIView {
         stackView.subviews.forEach { $0.removeFromSuperview() }
     }
     
-    private func configureAnswerButton() {
-        for i in 0..<viewModel.questions[viewModel.questionIndex].answers.count {
-            let button = answerButtons.setForArray(title: viewModel.questions[viewModel.questionIndex].answers[i].answerText, color: .black, tag: i)
-            button.addTarget(self, action: #selector(didTapAnwer), for: .touchUpInside)
-            groupButtons.append(button)
-        }
-        
+    func configureAnswerButton() {
         for button in groupButtons {
+            button.addTarget(self, action: #selector(didTapAnswer), for: .touchUpInside)
             stackView.addArrangedSubview(button)
-            
             
             NSLayoutConstraint.activate([
                 button.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
@@ -147,24 +115,10 @@ class GameView: UIView {
         }
     }
     
-    private func configureNextButton() {
-        addSubview(nextButton)
-        
-        nextButton.set(title: "Next", color: .brown)
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            nextButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            nextButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            nextButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
+    // MARK: - Actions
     
-    @objc func didTapAnwer() {
-        delegate?.didTapAnswer()
+    @objc func didTapAnswer() {
         clearStackView()
-        if viewModel.questionIndex < viewModel.questions.count {
-            setupCombine()
-        }
+        delegate?.didTapAnswer()
     }
 }

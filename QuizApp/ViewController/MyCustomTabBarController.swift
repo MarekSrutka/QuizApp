@@ -13,13 +13,15 @@ class MyCustomTabBarController: UITabBarController {
     
     let playQuizBtn = QAPlayButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [createMainNC(), createSettingsNC()]
         setupUI()
     }
     
-    // MARK: - Functions
+    // MARK: - UI Setup
     
     func setupUI() {
         layouUI()
@@ -37,6 +39,8 @@ class MyCustomTabBarController: UITabBarController {
         
         tabBar.layer.insertSublayer(shape, at: 0)
     }
+    
+    // MARK: - Tab Bar Creation
     
     func createMainNC() -> UINavigationController {
         let mainVC = MainVC()
@@ -60,11 +64,15 @@ class MyCustomTabBarController: UITabBarController {
         tabBar.tintColor = UIColor(hex: "#23d602", alpha: 1.0)
     }
     
+    // MARK: - Play Button Configuration
+    
     func configurePlayButton() {
         playQuizBtn.set(icon: UIImage(systemName: "flag.checkered")!)
         playQuizBtn.frame = CGRect(x: (self.tabBar.bounds.width)/2 - 30, y: -20, width: 60, height: 60)
         playQuizBtn.addTarget(self, action: #selector(didTapPlay), for: .touchUpInside)
     }
+    
+    // MARK: - Navigation
     
     func pushGameVC() {
         if let selectedNavController = selectedViewController as? UINavigationController {
@@ -73,15 +81,19 @@ class MyCustomTabBarController: UITabBarController {
         }
     }
     
+    // MARK: - Action
+    
     @objc func didTapPlay() {
         pushGameVC()
     }
 }
 
-
 // MARK: - Private extension
 
 private extension MyCustomTabBarController {
+    
+    // MARK: - Custom Path for Tab Bar
+    
     func getPathForTabBar() -> UIBezierPath {
         let frameWidth = self.tabBar.bounds.width
         let frameHeight = view.bounds.height

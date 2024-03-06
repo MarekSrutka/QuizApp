@@ -7,13 +7,13 @@
 
 import UIKit
 
-
 class MainVC: UIViewController {
     
-    
-// MARK: - Properties
+    // MARK: - Properties
     
     let mainView = MainView()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,8 @@ class MainVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    // MARK: - UI Setup
     
     func setupUI() {
         configureViewController()

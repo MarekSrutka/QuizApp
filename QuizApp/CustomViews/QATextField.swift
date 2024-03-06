@@ -9,11 +9,14 @@ import UIKit
 
 class QATextField: UITextField {
     
-    let iconImageView = UIImageView()
+    // MARK: - Properties
     
+    let iconImageView = UIImageView()
     var iconSize: CGSize = CGSize(width: 10.0, height: 10.0)
     let iconSpacing: CGFloat = 8.0
 
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageSetup(imageName: "ic_field_nickname")
@@ -23,6 +26,8 @@ class QATextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Configuration
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false

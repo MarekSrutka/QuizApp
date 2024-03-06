@@ -9,10 +9,12 @@ import UIKit
 
 class SettingsVC: UIViewController {
     
-// MARK: - Properties
+    // MARK: - Properties
     
     let settingsView = SettingsView()
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -22,6 +24,8 @@ class SettingsVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    // MARK: - UI Setup
     
     func setupUI() {
         configureViewController()
@@ -44,12 +48,16 @@ class SettingsVC: UIViewController {
         ])
     }
     
+    // MARK: - Logout Handling
+    
     func clickLogout() {
         PersistanceManager.deleteUser()
         dismiss(animated: false)
     }
     
 }
+
+// MARK: - SettingsViewDelegate
 
 extension SettingsVC: SettingsViewDelegate {
     func didTapLogout() {

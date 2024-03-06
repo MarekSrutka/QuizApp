@@ -28,6 +28,8 @@
 		785E19D72B947B9A0027DD86 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19D62B947B9A0027DD86 /* Constant.swift */; };
 		785E19DD2B949F3E0027DD86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19DC2B949F3E0027DD86 /* User.swift */; };
 		785E19E02B95E2E10027DD86 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19DF2B95E2E10027DD86 /* LoginView.swift */; };
+		785E19E22B9884B90027DD86 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19E12B9884B90027DD86 /* ResultVC.swift */; };
+		785E19E42B9885680027DD86 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19E32B9885680027DD86 /* ResultView.swift */; };
 		786832F52B8C831700BB8E8B /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F42B8C831700BB8E8B /* QuestionType.swift */; };
 		786832FA2B8CAB3B00BB8E8B /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F92B8CAB3B00BB8E8B /* QuestionService.swift */; };
 		78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0922B890EA400BC8C4D /* SettingsVC.swift */; };
@@ -83,6 +85,8 @@
 		785E19D62B947B9A0027DD86 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		785E19DC2B949F3E0027DD86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		785E19DF2B95E2E10027DD86 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		785E19E12B9884B90027DD86 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		785E19E32B9885680027DD86 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		786832F42B8C831700BB8E8B /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		786832F92B8CAB3B00BB8E8B /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		78E0B0922B890EA400BC8C4D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				78E0B0972B89270400BC8C4D /* SettingsView.swift */,
 				785560372B88E19500987524 /* HeaderView.swift */,
 				785560302B88D6EC00987524 /* MainView.swift */,
+				785E19E32B9885680027DD86 /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				785560112B864E3300987524 /* LoginVC.swift */,
 				785560132B864F6B00987524 /* MainVC.swift */,
 				785560392B8907CF00987524 /* MyCustomTabBarController.swift */,
+				785E19E12B9884B90027DD86 /* ResultVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				783D28F92B93B7E000E95BA1 /* PersistanceManager.swift in Sources */,
 				783D28FE2B93BA0700E95BA1 /* QATextField.swift in Sources */,
 				785E19DD2B949F3E0027DD86 /* User.swift in Sources */,
+				785E19E42B9885680027DD86 /* ResultView.swift in Sources */,
 				785560312B88D6EC00987524 /* MainView.swift in Sources */,
 				785560352B88DFEC00987524 /* EasyToUse.swift in Sources */,
 				783D28FC2B93B8E000E95BA1 /* QAButton.swift in Sources */,
@@ -463,6 +470,7 @@
 				786832FA2B8CAB3B00BB8E8B /* QuestionService.swift in Sources */,
 				785560292B88936500987524 /* UIImage+Extension.swift in Sources */,
 				78F7E8E92B8637EB00CFF03D /* SceneDelegate.swift in Sources */,
+				785E19E22B9884B90027DD86 /* ResultVC.swift in Sources */,
 				7855601A2B87A8EF00987524 /* Question.swift in Sources */,
 				785560142B864F6B00987524 /* MainVC.swift in Sources */,
 				78E0B0A52B8A15A100BC8C4D /* RouterVC.swift in Sources */,
