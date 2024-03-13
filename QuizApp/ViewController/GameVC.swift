@@ -28,7 +28,9 @@ class GameVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
+        
+        #warning("for testing")
+//        tabBarController?.tabBar.isHidden = true
     }
     
     deinit {
