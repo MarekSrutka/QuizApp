@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 protocol QuestionServicing {
     func getQuestions(_ completion: @escaping (Result<Question, Error>) -> Void)
@@ -13,21 +14,32 @@ protocol QuestionServicing {
 
 class QuestionService: QuestionServicing {
     func getQuestions(_ completion: @escaping (Result<Question, Error>) -> Void) {
-        let url = URL(string: "-- here should be the url --")!
+        let database = Database.database().reference()
+        let url = URL(string: "\(database.url)/.json")!
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else {
-                completion(.failure(error!))
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data, error == nil else {
+                if let error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(NetworkError.noData))
+                }
                 return
             }
             
-            let decoded = try! JSONDecoder().decode(Question.self, from: data!)
-            
-            completion(.success(decoded))
+            do {
+                let decoded = try JSONDecoder().decode(Question.self, from: data)
+                completion(.success(decoded))
+            } catch {
+                completion(.failure(error))
+            }
         }.resume()
     }
-}
 
+    enum NetworkError: Error {
+        case noData
+    }
+}
 
 // MARK: - Questions Mock
 

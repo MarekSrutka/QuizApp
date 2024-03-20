@@ -12,8 +12,8 @@ class GameVC: UIViewController {
     
     // MARK: - Properties
     
-    private let mockServices = QuestionMock()
-    private lazy var viewModel = QuestionViewModel(service: mockServices.self)
+    private let service = QuestionService()
+    private lazy var viewModel = QuestionViewModel(service: service.self)
     private var cancellables: Set<AnyCancellable> = []
     
     var gameView = GameView()
@@ -28,7 +28,6 @@ class GameVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         #warning("for testing")
 //        tabBarController?.tabBar.isHidden = true
     }
@@ -45,6 +44,7 @@ class GameVC: UIViewController {
         configureGameView()
     }
     
+    @MainActor
     func updateGameView() {
         updateProgressView()
         updateTitleLabel()
@@ -101,10 +101,20 @@ class GameVC: UIViewController {
     // MARK: - Combine Setup
     
     private func setupCombine() {
+        viewModel.$questions
+               .receive(on: DispatchQueue.main)
+               .sink { [weak self] questions in
+                   guard let self else { return }
+                   if !questions.isEmpty {
+                       self.updateGameView()
+                   }
+               }
+               .store(in: &cancellables)
+        
         viewModel.$questionIndex
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                guard let self = self, self.viewModel.questionIndex < self.viewModel.questions.count else {
+                guard let self, self.viewModel.questionIndex < self.viewModel.questions.count else {
                     return
                 }
                 self.updateGameView()

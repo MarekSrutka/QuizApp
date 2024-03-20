@@ -9,15 +9,15 @@ import Foundation
 import Combine
 
 class QuestionViewModel: ObservableObject {
-    var questions: [QuestionResponse] = []
-    var error: Error? = nil
+    @Published var questions: [QuestionResponse] = []
     @Published var questionIndex: Int = 0
+    var error: Error? = nil
     var answerChoosen: [String] = []
     var score: Int = 0
     
-    private let service: QuestionServicing
+    private let service: QuestionService
     
-    init(service: QuestionServicing) {
+    init(service: QuestionService) {
         self.service = service
         fetchData()
     }

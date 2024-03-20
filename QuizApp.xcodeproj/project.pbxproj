@@ -38,6 +38,8 @@
 		78BF79922BAA3F0900A5EE77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79912BAA3F0900A5EE77 /* FirebaseAuth */; };
 		78BF79942BAA3F0900A5EE77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79932BAA3F0900A5EE77 /* FirebaseFirestore */; };
 		78BF79962BAA3F0900A5EE77 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79952BAA3F0900A5EE77 /* FirebaseFirestoreSwift */; };
+		78BF79982BAA457700A5EE77 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79972BAA457700A5EE77 /* FirebaseDatabase */; };
+		78BF799A2BAA457700A5EE77 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79992BAA457700A5EE77 /* FirebaseDatabaseSwift */; };
 		78E0B0932B890EA400BC8C4D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0922B890EA400BC8C4D /* SettingsVC.swift */; };
 		78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */; };
 		78E0B0982B89270400BC8C4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0972B89270400BC8C4D /* SettingsView.swift */; };
@@ -121,8 +123,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BF799A2BAA457700A5EE77 /* FirebaseDatabaseSwift in Frameworks */,
 				78BF79922BAA3F0900A5EE77 /* FirebaseAuth in Frameworks */,
 				78BF79942BAA3F0900A5EE77 /* FirebaseFirestore in Frameworks */,
+				78BF79982BAA457700A5EE77 /* FirebaseDatabase in Frameworks */,
 				78BF79962BAA3F0900A5EE77 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +361,8 @@
 				78BF79912BAA3F0900A5EE77 /* FirebaseAuth */,
 				78BF79932BAA3F0900A5EE77 /* FirebaseFirestore */,
 				78BF79952BAA3F0900A5EE77 /* FirebaseFirestoreSwift */,
+				78BF79972BAA457700A5EE77 /* FirebaseDatabase */,
+				78BF79992BAA457700A5EE77 /* FirebaseDatabaseSwift */,
 			);
 			productName = QuizApp;
 			productReference = 78F7E8E32B8637EB00CFF03D /* QuizApp.app */;
@@ -901,6 +907,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78BF798F2BAA3ED000A5EE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		78BF79972BAA457700A5EE77 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78BF798F2BAA3ED000A5EE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		78BF79992BAA457700A5EE77 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78BF798F2BAA3ED000A5EE77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

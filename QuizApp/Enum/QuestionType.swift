@@ -8,6 +8,7 @@
 import Foundation
 
 
-enum QuestionType: Codable {
-    case single, multiple
+enum QuestionType: String, Codable {
+    case single = "single"
+    case multiple = "multiple"
 }
