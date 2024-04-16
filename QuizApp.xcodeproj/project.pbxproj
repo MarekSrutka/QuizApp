@@ -34,7 +34,6 @@
 		785E19ED2B9910300027DD86 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E19EC2B9910300027DD86 /* String+Extension.swift */; };
 		786832F52B8C831700BB8E8B /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F42B8C831700BB8E8B /* QuestionType.swift */; };
 		786832FA2B8CAB3B00BB8E8B /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786832F92B8CAB3B00BB8E8B /* QuestionService.swift */; };
-		78BF798E2BAA3E8600A5EE77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78BF798D2BAA3E8600A5EE77 /* GoogleService-Info.plist */; };
 		78BF79922BAA3F0900A5EE77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79912BAA3F0900A5EE77 /* FirebaseAuth */; };
 		78BF79942BAA3F0900A5EE77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79932BAA3F0900A5EE77 /* FirebaseFirestore */; };
 		78BF79962BAA3F0900A5EE77 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78BF79952BAA3F0900A5EE77 /* FirebaseFirestoreSwift */; };
@@ -44,6 +43,7 @@
 		78E0B0952B89174200BC8C4D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */; };
 		78E0B0982B89270400BC8C4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0972B89270400BC8C4D /* SettingsView.swift */; };
 		78E0B0A52B8A15A100BC8C4D /* RouterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B0A42B8A15A100BC8C4D /* RouterVC.swift */; };
+		78EEF1A02BCE6872002CE421 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78EEF19F2BCE6872002CE421 /* GoogleService-Info.plist */; };
 		78F7E8E72B8637EB00CFF03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7E8E62B8637EB00CFF03D /* AppDelegate.swift */; };
 		78F7E8E92B8637EB00CFF03D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7E8E82B8637EB00CFF03D /* SceneDelegate.swift */; };
 		78F7E8F02B8637EC00CFF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F7E8EF2B8637EC00CFF03D /* Assets.xcassets */; };
@@ -100,11 +100,11 @@
 		785E19EC2B9910300027DD86 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		786832F42B8C831700BB8E8B /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		786832F92B8CAB3B00BB8E8B /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
-		78BF798D2BAA3E8600A5EE77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78E0B0922B890EA400BC8C4D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		78E0B0942B89174200BC8C4D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		78E0B0972B89270400BC8C4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		78E0B0A42B8A15A100BC8C4D /* RouterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterVC.swift; sourceTree = "<group>"; };
+		78EEF19F2BCE6872002CE421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "QuizApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78F7E8E32B8637EB00CFF03D /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F7E8E62B8637EB00CFF03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F7E8E82B8637EB00CFF03D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		78F7E8DA2B8637EB00CFF03D = {
 			isa = PBXGroup;
 			children = (
-				78BF798D2BAA3E8600A5EE77 /* GoogleService-Info.plist */,
+				78EEF19F2BCE6872002CE421 /* GoogleService-Info.plist */,
 				785E19EA2B990FBD0027DD86 /* Localizable.strings */,
 				78F7E8E52B8637EB00CFF03D /* QuizApp */,
 				78F7E8FC2B8637EC00CFF03D /* QuizAppTests */,
@@ -457,7 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F7E8F32B8637EC00CFF03D /* LaunchScreen.storyboard in Resources */,
-				78BF798E2BAA3E8600A5EE77 /* GoogleService-Info.plist in Resources */,
+				78EEF1A02BCE6872002CE421 /* GoogleService-Info.plist in Resources */,
 				785E19E82B990FBD0027DD86 /* Localizable.strings in Resources */,
 				78F7E8F02B8637EC00CFF03D /* Assets.xcassets in Resources */,
 			);
